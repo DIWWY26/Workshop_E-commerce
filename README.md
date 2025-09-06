@@ -5,23 +5,11 @@
 
 ## สิ่งที่ใช้ในโปรเจค
 
-- **Node.js** - 
-- **Express.js** - 
-- **Bootstrap** - 
-- **MySQL** - 
-- **Postman** -
-
-# E-commerce by Node.js
-
-โปรเจคนี้เป็น **E-commerce Application** ที่พัฒนาด้วย **Node.js** และ **Express** โดยเป็นส่วนหนึ่งของ workshop ที่เราได้เรียนรู้และทดลองสร้างระบบขายของออนไลน์แบบง่าย ๆ  
-
-## สิ่งที่ใช้ในโปรเจค
-
-- **Node.js** - 
-- **Express.js** - 
-- **Bootstrap** - 
-- **MySQL** - 
-- **Postman** -  
+- **Node.js** 
+- **Express.js** 
+- **Bootstrap** 
+- **MySQL** 
+- **Postman**
 
 ## ขอบเขตของโปรเจค
 
