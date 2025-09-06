@@ -1,0 +1,70 @@
+<%- include('page_header') %>
+
+    <form method="post">
+        <div class="container mt-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="input-group">
+                        <div class="input-group-text">เบอร์โทร</div>
+                        <input class="form-control" / name="phone">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-info">
+                                <span class="material-symbols-outlined material-icons">
+                                    search
+                                </span>
+                                search
+                            </button>
+                        </div>
+                    </div>
+                    <% if (orders && orders.length> 0) { %>
+                        <table class="table table-bordered mt-2">
+                            <thead class="table-info">
+                                <tr>
+                                    <th>ลูกค้า</th>
+                                    <th>คำสั่งซื้อ</th>
+                                    <th>สถานะชำระเงิน</th>
+                                    <th>รหัสติดตามพัสดุ</th>
+                                    <th>ขนส่ง</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% orders.forEach(function(item) { %>
+                                    <tr>
+                                        <td>
+                                            <%= item.name %>
+                                        </td>
+                                        <td>
+                                            <% if (item.created_date) { %>
+                                                <%= dayjs(item.created_date).format(dayFormat) %>
+                                                <% } else { %>
+                                                    -
+                                                <% } %>
+                                        </td>
+                                        <td>
+                                            <% if (item.pay_date) { %>
+                                                <span class="text-success">ชำระเงินแล้ว</span>
+                                                <% } else { %>
+                                                    <span class="text-danger">ยังไม่ชำระเงิน</span>
+                                                    <% } %>
+                                        </td>
+                                        <td>
+                                            <%= item.track_code %>
+                                        </td>
+                                        <td>
+                                            <%= item.track_name %>
+                                        </td>
+                                    </tr>
+                                    <% }); %>
+                            </tbody>
+                        </table>
+                        <% } else { %>
+                            <div class="alert alert-warning mt-2">ไม่พบข้อมูล</div>
+                            <% } %>
+
+
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <%- include('page_footer') %>

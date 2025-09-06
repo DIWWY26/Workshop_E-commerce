@@ -1,0 +1,33 @@
+<%- include('header') %>
+
+<div class="card mt-3">
+    <div class="card-body">
+        <div class="card-title">Sales report by product</div>
+        <table class="table table-bordered table-striped mt-3">
+            <thead>
+                <tr>
+                    <th width="200px">Product barcode</th>
+                    <th width="400px">Product List</th>
+                    <th class="text-right">Sales</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% arr.forEach(item=> { %>
+                    <tr>
+                        <td>
+                            <%= item.barcode %>
+                        </td>
+                        <td>
+                            <%= item.name %>
+                        </td>
+                        <td class="text-right">
+                            <%= item.totalPrice %>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<%- include('footer') %>

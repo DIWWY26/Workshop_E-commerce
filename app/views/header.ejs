@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>E Commercr System</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400&display=swap');
+
+        * {
+            font-family: 'Prompt';
+        }
+
+        .material-icons {
+            display: inline-flex;
+            vertical-align: text-bottom;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <% if (session.token !=undefined) { %>
+        <div>
+            <div class="h4 float-left">E-Commerce Back Office</div>
+            <div class="float-right">
+                [<%= session.name %>]
+                    <a href="/changeProfile" class="btn btn-info">
+                        <span class="material-symbols-outlined material-icons ">
+                            settings
+                        </span>
+                        แก้ไขข้อมูล
+                    </a>
+                    <a href="/logout" onclick="return confirm('Are you sure?')" class="btn btn-danger">
+                        <span class="material-symbols-outlined material-icons">
+                            logout
+                        </span>
+                        Logout
+                    </a>
+            </div>
+            <div class="clearfix"></div>
+
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-2">
+                <a class="navbar-brand" href="/home">
+                    <span class="material-symbols-outlined material-icons">
+                        home
+                    </span>
+                    Home
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link " href="/groupProduct">
+                            <span class="material-symbols-outlined material-icons">
+                                format_list_bulleted
+                            </span>
+                            ประเภทสินค้า
+                        </a>
+                        <a class="nav-link" href="/product">
+                            <span class="material-symbols-outlined material-icons">
+                                widgets
+                            </span>
+                            สินค้า
+                        </a>
+                        <a class="nav-link" href="/order">
+                            <span class="material-symbols-outlined material-icons ">
+                                dvr
+                            </span>
+                            ยอดสั่งซื้อ
+                        </a>
+                        <a class="nav-link" href="/user">
+                            <span class="material-symbols-outlined material-icons">
+                                person
+                            </span>
+                            ผู้ใช้งานระบบ
+                        </a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                aria-expanded="false">
+                                <span class="material-symbols-outlined material-icons">
+                                    description
+                                </span>
+                                รายงาน
+                            </a>
+                            <div class="dropdown-menu bg-dark">
+                                <a class="dropdown-item text-white" href="/reportSalePerDay">
+                                    <span class="material-symbols-outlined material-icons">
+                                        description
+                                    </span>
+                                    ยอดขาย รายวัน
+                                </a>
+                                <a class="dropdown-item text-white" href="/reportSalePerMonth">
+                                    <span class="material-symbols-outlined material-icons">
+                                        description
+                                    </span>
+                                    ยอดขาย รายเดือน
+                                </a>
+                                <a class="dropdown-item text-white" href="/reportSalePerProduct">
+                                    <span class="material-symbols-outlined material-icons">
+                                        description
+                                    </span>
+                                    ยอดขาย แยกตามสินค้า
+                                </a>
+                                <a class="dropdown-item text-white" href="/reportStock">
+                                    <span class="material-symbols-outlined material-icons">
+                                        description
+                                    </span>
+                                    สต๊อกสินค้า
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                aria-expanded="false">
+                                <span class="material-symbols-outlined material-icons">
+                                    inventory
+                                </span>
+                                สต๊อกสินค้า
+                            </a>
+                            <div class="dropdown-menu bg-dark">
+                                <a class="dropdown-item text-white" href="/importToStock">
+                                    <span class="material-symbols-outlined material-icons">
+                                        file_download
+                                    </span>
+                                    รับสินค้าเข้าสต๊อก
+                                </a>
+                                <a class="dropdown-item text-white" href="/exportFromStock">
+                                    <span class="material-symbols-outlined material-icons">
+                                        file_upload
+                                    </span>
+                                    เบิกสินค้าออกจากสต๊อก
+                                </a>
+                            </div>
+                        </li>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <% } %>
